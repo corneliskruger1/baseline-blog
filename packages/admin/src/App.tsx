@@ -23,6 +23,8 @@ import Login from './baseblocks/login/pages/Login';
 import NotAdmin from './baseblocks/not-admin/pages/NotAdmin';
 import Layout from './components/layout/Layout';
 import Loader from './components/page-content/loader/Loader';
+import BlogPosts from './baseblocks/blogpost/pages/BlogPosts';
+import { blogPostListLoader } from './baseblocks/blogpost/pages/BlogPosts';
 
 Amplify.configure({
   Auth: {
@@ -116,6 +118,11 @@ const router = createBrowserRouter([
     loader: protectedLoader,
     children: [
       { path: '/dashboard', Component: Dashboard },
+      {
+        path: '/blogposts',
+        Component: BlogPosts,
+        loader: blogPostListLoader,
+      },
       {
         path: '/admins',
         Component: Admins,

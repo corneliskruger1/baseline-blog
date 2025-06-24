@@ -12,7 +12,7 @@ const Hero = (): JSX.Element => (
         mi, sit amet efficitur augue purus vel mi. Suspendisse eu varius nisl.
         Maecenas sapien massa, aliquet id lectus sed, vulputate molestie nunc.
       </p>
-      <Link to="/#">Button</Link>
+      <Link to="/#">More...</Link>
     </div>
     <div className={styles.image}>
       <img src="./placeholder.svg" alt="placeholder" />

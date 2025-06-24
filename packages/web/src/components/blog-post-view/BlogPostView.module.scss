@@ -1,0 +1,23 @@
+@use '../../styles/global';
+
+.blog {
+  padding: 80px 180px;
+
+  .content {
+    h1 {
+      @include global.hugeFont(normal, bold);
+    }
+
+    h4 {
+      @include global.smallFont(normal, bold);
+    }
+
+    p {
+      @include global.smallFont();
+    }
+
+    a {
+      @include global.genericButton();
+    }
+  }
+}

@@ -38,6 +38,15 @@ const Sidebar = (): JSX.Element => {
         <div className={styles.spacer} />
 
         <Link
+          to="/blogposts"
+          className={`${styles.link} ${
+            location.pathname === '/blogposts' ? styles.active : ''
+          }`}
+        >
+          <img src="/icons/post.svg" alt="Blog posts" />
+          <span>Blog posts</span>
+        </Link>
+        <Link
           to="/admins"
           className={`${styles.link} ${
             location.pathname === '/admins' ? styles.active : ''
