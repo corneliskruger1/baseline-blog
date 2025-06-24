@@ -6,7 +6,7 @@ interface BlogPostViewProps {
   blogPost: Blogpost;
 }
 
-const AboutBanner = (props: BlogPostViewProps): JSX.Element => {
+const BlogPostView = (props: BlogPostViewProps): JSX.Element => {
   const [blogPost] = useState<Blogpost>(props?.blogPost);
 
   return (
@@ -22,4 +22,4 @@ const AboutBanner = (props: BlogPostViewProps): JSX.Element => {
   );
 }
 
-export default AboutBanner;
+export default BlogPostView;
