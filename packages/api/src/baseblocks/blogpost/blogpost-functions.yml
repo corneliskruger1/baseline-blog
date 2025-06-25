@@ -20,7 +20,7 @@ ApiBlogpost:
           allowCredentials: false
     - http:
         path: /blogpost
-        method: ANY
+        method: post
         authorizer: # https://www.serverless.com/framework/docs/providers/aws/events/apigateway#http-endpoints-with-aws_iam-authorizers
           type: COGNITO_USER_POOLS
           authorizerId:
@@ -35,3 +35,50 @@ ApiBlogpost:
             - X-Amz-Security-Token
             - X-Amz-User-Agent
           allowCredentials: false
+    - http:
+        path: /blogpost
+        method: put
+        authorizer: # https://www.serverless.com/framework/docs/providers/aws/events/apigateway#http-endpoints-with-aws_iam-authorizers
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+        cors:
+          origin: ${self:custom.apiCorsOrigin}
+          headers:
+            - Content-Type
+            - X-Amz-Date
+            - Authorization
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+          allowCredentials: false
+    - http:
+        path: /blogpost
+        method: delete
+        authorizer: # https://www.serverless.com/framework/docs/providers/aws/events/apigateway#http-endpoints-with-aws_iam-authorizers
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+        cors:
+          origin: ${self:custom.apiCorsOrigin}
+          headers:
+            - Content-Type
+            - X-Amz-Date
+            - Authorization
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+          allowCredentials: false
+    - http:
+          path: /blogpost/list
+          method: get
+          cors:
+            origin: ${self:custom.apiCorsOrigin}
+            headers:
+              - Content-Type
+              - Authorization
+              - X-Amz-Date
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
